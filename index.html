@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Showcase Template</title>
+  <title>AJ Slater</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,15 +11,12 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Project Showcase</a>
+      <a class="navbar-brand" href="#">Andrew Slater</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
@@ -37,49 +34,60 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero bg-primary text-white text-center">
-    <div class="container">
-      <h1>Welcome to my some of my completed projects</h1>
-    </div>
-  </header>
 
-  <!-- About Section -->
-<section id="about" class="about py-5">
+  <!-- Hero Section -->
+  <section id="hero" class="hero py-5">
     <div class="container">
-      <h2>About Me</h2>
       <div class="row">
-        <div class="col-lg-6">
-          <img src="images/profile-pic.jpg" alt="Profile Picture" class="img-fluid mb-4">
-        </div>
-        <div class="col-lg-6">
-          <p>Hello, I'm Andrew Slater, a computer science graduate from the University of California San Diego. With a strong passion for software engineering, I have specialized in machine learning, graphics and rendering, algorithms, and networking throughout my academic journey. I have gained practical experience in these areas, along with 1+ years of industry experience.</p>
-          <p>During my time at UCSD, I excelled in courses such as Data Science, Data Structures and Algorithms, Deep Learning, Linear Algebra, Computer Graphics, Computer Rendering, Computer Animation, Networking, Computer Vision, Operating Systems, and Image Processing.</p>
-          <p>I am a TensorFlow Certified Developer, demonstrating my proficiency in building and training neural network models using TensorFlow 2.x. I have successfully worked on image classification tasks, natural language processing (NLP), and time series analysis using deep learning techniques.</p>
-          <p>During my internship at Boeing, I developed and debugged Python scripts to enhance the efficiency of mechanical engineers' workflow. I am adept at Python programming and possess valuable soft skills such as time management, communication, and logical thinking.</p>
-          <p>In my recent project at TagGuys UCSD, I contributed to the development of a 4-player networked video game with an art style inspired by Fall Guys. This project involved utilizing C++, OpenGL, Boost, Asio, and SFML. I gained experience in agile development, pair programming, debugging, and teamwork.</p>
-          <p>Additionally, I worked on the Quaternion Interpolation project, demonstrating the smooth transitions between poses using quaternion representation. I implemented quaternion interpolation techniques such as SLERP and Catmull-Rom algorithm using C++ and OpenGL.</p>
-          <p>In a personal project, I created a raytracer that handles sphere intersections and mirror and diffuse surfaces. This project was inspired by Andrew Kelsers' raytracer business card and showcased my knowledge from the rendering course.</p>
-          <p>I am proficient in programming languages such as Python (including Pandas, PyTorch, TensorFlow, NumPy, Scikit-learn), C/C++ (OpenGL, CUDA), HTML/CSS, JavaScript, and Java. I am experienced with tools like Linux, Git, and have proficiency in various software applications.</p>
-          <p>With strong soft skills in time management, teamwork, problem-solving, and documentation, I am dedicated to delivering high-quality results in an agile environment.</p>
-          <p>If you have any exciting opportunities or would like to connect, please feel free to reach out to me through the contact form below. I'm excited to bring my skills and passion to contribute to your team.</p>
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="display-4">Welcome!</h1>
+          <p class="lead">"If debugging is the process of removing software bugs, then programming must be the process of putting them in." - Edsger Dijkstra</p>
         </div>
       </div>
     </div>
   </section>
 
+
+ <!-- About Section -->
+<section id="about" class="about py-5">
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-6">
+          <h2>About Me</h2>
+          <p class="lead">Passionate computer scientist with expertise in software development, data structures, and algorithms. Skilled in C/C++, Java, Python, and web technologies. 
+            Excited about leveraging technology to solve complex problems and deliver innovative solutions. A lifelong learner and can't wait to dive into something new. 
+            These projects are chance for me to explore new areas of software and computer science.
+          </p>
+          
+        </div>
+        <div class="col-lg-6">
+          <img src="assets/profile.jpg" alt="Profile Picture" class="img-fluid mb-4 mx-6" style="max-width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Project 1 Section -->
   <section id="tag-guys" class="project py-5">
     <div class="container">
-      <h2>Project 1</h2>
+      <h2>Tag Guys</h2>
       <div class="row">
         <div class="col-md-6">
             
             <img src="assets/tagguys.png" class="img-fluid" alt="Project 2">
         </div>
         <div class="col-md-6">
-          <p>Description of project 1.</p>
-          <a href="#" class="btn btn-primary">Repo Link</a>
+          <p>This is a video game without a game engine. This project was It has been the biggest software project that I have been apart of so far with 7 
+            developers. We used agile devopment to try and reign in the chaos, but for some cases I learned first hand why best practices exist. We met multiple
+            times a week for stand up, pair programming sessions, and integration between branches. 
+          </p>
+          <p>On the technical side this game was made with C++ using OpenGl for the graphics, Asimp for importing the animations, Boost Asio for networking and SFML for the audio. 
+             I mainly worked on the networking for this game, we used the TCP protocol communication because the demo for our project was occured with all the computers on the same
+             large bandwith, high speed network. 
+          </p>
+          <p>You can download the game from the repo below, as long as you have a Windows machine and Visual Studio with CMake</p>
+          <a href="https://github.com/ucsd-cse125-sp23/group-4" class="btn btn-primary">Repo Link</a>
+          <a href="https://www.youtube.com/watch?v=DsZ7Sru-KDg&list=PLbbCsk7MUIGfNN3iE0_L5A0LC4uLeEstf" class="btn btn-secondary">Presentation Link</a>
         </div>
       </div>
     </div>
@@ -91,11 +99,25 @@
       <h2>Quaternion Interpolation</h2>
       <div class="row">
         <div class="col-md-6">
-            <video src="assets/qi2.gif" class="img-fluid" autoplay loop muted></video>
+            <img src="assets/qi2.gif" class="img-fluid" alt="Qi2 GIF">
         </div>
         <div class="col-md-6">
-          <p>Description of project 2.</p>
-          <a href="#" class="btn btn-primary">Repo Link</a>
+          <p> The project was a final for a computer animation course I took at UCSD. I selected this as a final project
+             because it gave me a chance to see how quaternions are practically used. While quaternions as a concept 
+             were difficult for me to understand, in code they were much easier to manage than Euler angles and also made
+             interpolation between poses look very simple</p>
+            <p> This project has two different interpolation techinuqes of both spherical linear interpolation (SLERP) and Catmull-Rom algorithm. 
+                The SLERP works similar to linear interpolation but it takes into account the angle between two different quaternions.
+                The Catmull-Rom works by treating the interpolation as between multiple quaternions not just two. It is similar to a spline.
+                This allows for a much smoother transition between poses than even slerp. Don't just take my word for it, download it and run it for yourself
+                <pre>
+                    <code>
+                      <span>$ make</span>
+                      <span>$ ./menv</span>
+                    </code>
+                  </pre>
+            </p>
+          <a href="https://github.com/ajslaterhb2000/quaternion_interpolation" class="btn btn-primary">Repo Link</a>
         </div>
       </div>
     </div>
@@ -104,39 +126,35 @@
   <!-- Project 3 Section -->
   <section id="tiny-raytracer" class="project py-5">
     <div class="container">
-      <h2>Raytracer</h2>
+      <h2>Tiny Raytracer</h2>
       <div class="row">
         <div class="col-md-6">
-          <img src="project3.jpg" class="img-fluid" alt="Project 3">
+          <img src="assets/ray-tracing-image-1.jpg" class="img-fluid" alt="Project 3">
         </div>
         <div class="col-md-6">
-          <p>Description of project 3.</p>
+            <p>
+                Inspired by Andrew Kelsers raytracer business card, I wanted to try and write a raytracer that could be condensed and to
+                the size of a buisness card as well. The idea is to try and condense the relatively small amount of code it takes to 
+                do basic raytracing to the size of a business card and have it render an image out. In order to run this code go to the repo
+                and with your C++ compiler type (my compiler is g++).
+            </p>
+            <pre>
+                <code>
+                  <span>$ g++ -o tiny_raytracer tiny_raytracer.cpp</span>
+                  <span>$ ./tiny_raytracer</span>
+                </code>
+              </pre>
+            <p>
+                This project is fun because it starts with some very simple math and quickly advances in complexity and realism. 
+                This project just handles sphere intersections, point lights for lighting, and simple diffuse, 
+                and mirror surfaces for now. I look forward to continue expanding upon this as my knowledge of rendering grows.
+          </p>
+          
           <a href="#" class="btn btn-primary">Repo Link</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Contact Section 
-  <section id="contact" class="contact py-5">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>Fill out the form below to get in touch.</p>
-      <form action="process_form.php" method="POST">
-        <div class="row">
-          <div class="col-md-6">
-            <input type="text" class="form-control mb-3" placeholder="Your Name">
-            <input type="email" class="form-control mb-3" placeholder="Your Email">
-            <input type="tel" class="form-control mb-3" placeholder="Your Phone Number">
-          </div>
-          <div class="col-md-6">
-            <textarea class="form-control mb-3" placeholder="Your Message" rows="5"></textarea>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-  </section>-->
 
   <!-- Footer -->
   <footer class="footer bg-dark text-white text-center py-3">
