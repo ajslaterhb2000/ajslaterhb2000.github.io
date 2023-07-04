@@ -54,9 +54,10 @@
       <div class="row ">
         <div class="col-lg-6">
           <h2>About Me</h2>
-          <p class="lead">Passionate computer scientist with expertise in software development, data structures, and algorithms. Skilled in C/C++, Java, Python, and web technologies. 
-            Excited about leveraging technology to solve complex problems and deliver innovative solutions. A lifelong learner and can't wait to dive into something new. 
-            These projects are chance for me to explore new areas of software and computer science.
+          <p class="lead">I am a highly motivated and skilled computer science graduate from the University of California San Diego, specializing
+            in areas such as data science, computer graphics, networking, and software development. With a drive for continuous
+            learning and a keen eye for detail, I am well‑equipped to tackle complex challenges and contribute effectively to any
+            team or project working alone or in a group.
           </p>
           
         </div>
@@ -81,17 +82,35 @@
             developers. We used agile devopment to try and reign in the chaos, but for some cases I learned first hand why best practices exist. We met multiple
             times a week for stand up, pair programming sessions, and integration between branches. 
           </p>
-          <p>On the technical side this game was made with C++ using OpenGl for the graphics, Asimp for importing the animations, Boost Asio for networking and SFML for the audio. 
-             I mainly worked on the networking for this game, we used the TCP protocol communication because the demo for our project was occured with all the computers on the same
-             large bandwith, high speed network. 
-          </p>
-          <p>You can download the game from the repo below, as long as you have a Windows machine and Visual Studio with CMake</p>
-          <a href="https://github.com/ucsd-cse125-sp23/group-4" class="btn btn-primary">Repo Link</a>
-          <a href="https://www.youtube.com/watch?v=DsZ7Sru-KDg&list=PLbbCsk7MUIGfNN3iE0_L5A0LC4uLeEstf" class="btn btn-secondary">Presentation Link</a>
+          <p>If you're interested in experiencing the game, you can download it from the repository link below. Please note that it requires a Windows machine with Visual Studio and CMake.</p>
+        <a href="https://github.com/ucsd-cse125-sp23/group-4" class="btn btn-primary">Repo Link</a>
+        <a href="https://www.youtube.com/watch?v=DsZ7Sru-KDg&list=PLbbCsk7MUIGfNN3iE0_L5A0LC4uLeEstf" class="btn btn-secondary">Presentation Link</a>
+        
         </div>
       </div>
+      <div>
+        <h3>Developer Process: Agile Development</h3>
+        <p>Developing the Tag Guys game was a significant undertaking that required effective project management and collaboration. We employed Agile Development methodologies to enhance our productivity and adapt to evolving requirements. Here's an overview of our developer process:</p>
+        <ul>
+          <li><strong>Regular Meetings:</strong> We conducted multiple weekly meetings, including stand-up sessions, to discuss progress, address challenges, and ensure alignment among team members.</li>
+          <li><strong>Pair Programming:</strong> We embraced pair programming sessions, where two developers collaborated closely on coding tasks. This fostered knowledge sharing, improved code quality, and accelerated our development process.</li>
+          <li><strong>Branch Integration:</strong> Integration between branches was a crucial aspect of our workflow. We dedicated specific sessions to integrate individual work into the main project, ensuring a cohesive and functional product.</li>
+        </ul>
+        <p>Our commitment to Agile Development enabled us to navigate the complexities of the project efficiently, maintain transparency, and deliver a high-quality game experience.</p>
+        <h3>Technical Details</h3>
+        <p>Tag Guys was built using a combination of powerful technologies:</p>
+        <ul>
+          <li><strong>C++ and OpenGL:</strong> We utilized C++ programming language in conjunction with OpenGL for graphics rendering, providing visually immersive gameplay.</li>
+          <li><strong>Asimp:</strong> To import and incorporate animations seamlessly, we leveraged Asimp, a library that supports multiple animation formats.</li>
+          <li><strong>Boost Asio:</strong> Networking functionality was implemented using Boost Asio, which facilitated smooth communication between game instances for seamless multiplayer experiences.</li>
+          <li><strong>SFML:</strong> The game's audio system was implemented using SFML, enabling us to create an immersive soundscape for players.</li>
+        </ul>
+        <p>As a member of the development team, my primary focus was on networking implementation, leveraging the TCP protocol for reliable communication. This choice proved ideal for our project's initial demo, which involved computers connected to a high-speed, high-bandwidth network.</p>
+        <a href="https://tagguys.notion.site/" class="btn btn-primary">Dev notes</a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Project 2 Section -->
   <section id="quaternion-interpolation" class="project py-5">
@@ -129,14 +148,15 @@
       <h2>Tiny Raytracer</h2>
       <div class="row">
         <div class="col-md-6">
-          <img src="assets/ray-tracing-image-1.jpg" class="img-fluid" alt="Project 3">
+         <img src="assets/tr.png" class="img-fluid" alt="Project 3">
+         
+    
         </div>
         <div class="col-md-6">
             <p>
                 Inspired by Andrew Kelsers raytracer business card, I wanted to try and write a raytracer that could be condensed and to
                 the size of a buisness card as well. The idea is to try and condense the relatively small amount of code it takes to 
-                do basic raytracing to the size of a business card and have it render an image out. In order to run this code go to the repo
-                and with your C++ compiler type (my compiler is g++).
+                do basic raytracing to the size of a business card and have it render an image out. In order to run this, copy the code, and then compile with
             </p>
             <pre>
                 <code>
@@ -150,10 +170,62 @@
                 and mirror surfaces for now. I look forward to continue expanding upon this as my knowledge of rendering grows.
           </p>
           
-          <a href="#" class="btn btn-primary">Repo Link</a>
+          <!--<a href="#" class="btn btn-primary">Repo Link</a>-->
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center">
+      <div class="text-left">
+        <pre><code>
+          #include &lt;iostream&gt;
+          #include &lt;cmath&gt;
+          typedef double d;typedef int q;const d c_PI=3.1415926;d rV(){return (d)rand()/
+          RAND_MAX;}struct v{d x,y,z;v operator+(v o){return v{x+o.x,y+o.y,z+o.z};}v 
+          operator*(v o){return v{x*o.x,y*o.y,z*o.z};}v operator*(d s){return v{x*s,y*s,z*
+          s};}v operator-(v o){return v{x-o.x,y-o.y,z-o.z};}d operator%(v o){return x*o.x+
+          y*o.y+z*o.z;}v operator^(v o){return v{y*o.z-z*o.y,z*o.x-x*o.z,x*o.y-y*o.x};}
+          d n(){return sqrt(y*y+x*x+z*z);}v operator!(){d l=n();return 
+          v{x/l,y/l,z/l};}};v bt(v& dr, v& w) {v a=fabs(w.x>.9)?v{0.0,1.0,0.0}:v{1.0,0.0,
+          0.0};v v1=!(w^a);v u=w^v1;return !(u*dr.x+v1*dr.y+w*dr.z);}std::ostream& 
+          operator<<(std::ostream& os,const v& v) {os<<v.x<<" "<<v.y<<" "<< v.z;return os;
+          }v rcd() {d r1 = rV();d r2 = rV();d phi = 2*c_PI*r1;return v{cos(phi)*sqrt(r2),
+          sin(phi) * sqrt(r2),sqrt(1-r2)};}struct s{v ce;d r;v co;q mat;q a9;
+          d isect(v& o, v& rd){v oc=o-ce;d a=(rd%rd);d b=2.0*(oc%rd);d c=(oc%oc)-r*r;d e =
+          b*b-4.0*a*c;if(e >= 0.0){d dr = sqrt(e);return 
+            ((-b-dr)/(2.0*a)<0)?(-b+dr)/(2.0
+          *a):(-b-dr)/(2.0*a);}return -1.0;}};struct light{v ra;};light alights[]={v{10.0,
+          10.0,10.0}};s objs[]= {s{v{-.5,-.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-.5,.5
+          ,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-.5,1.5,-12.0},0.5,v{0.75,0.25,0.25},0,
+          -1},s{v{-.5,2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-1.5,2.5,-12.0},0.5,v{
+          0.75,0.25,0.25},0,-1},s{v{-2.5,-.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-2.5,
+          .5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-2.5,1.5,-12.0},0.5,v{0.75,0.25,0.25}
+          ,0,-1},s{v{-2.5,2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-1.5,.5,-12.0},0.5,
+          v{0.75, 0.25, 0.25},0,-1},s{v{3.5, 2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{
+          1.5,2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{2.5,1.5,-12.0},0.5,v{0.75,0.25,
+          0.25},0,-1},s{v{2.5,.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{2.5,-.5,-12.0},0.5
+          ,v{0.75, 0.25, 0.25}, 0, -1},s{v{1.5,0.0, -12.0},0.5,v{0.75, 0.25, 0.25},0,-1}
+          ,s{v{ 2.5, 2.5, -12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{ 0.0,-101.5,-6.0},100.0
+          ,v{0.25, 0.25, 0.75},0,-1},s{v{5.0,8.0,-12.0},1.0,v{0.0,0.0,0.0},3,0}};d fI(v o,
+          v rd,q& sh) {d t_min=20000000000.0;for(q i=0;i<20;i++){d t3=objs[i].isect(o
+          ,rd);if(t3<t_min&&t3>0){t_min = t3;sh = i;}}return (sh == -1)?-1.0:t_min;}d max(
+          d a, d b){return (a > b)?a:b;}v rc(v o, v& rd, q depth){if (depth <= 0) return
+          v{0.0,0.0,0.0};q s1 = -1;d t_min=fI(o,rd,s1);if(s1!=-1){s sh=objs[s1];v P=rd*
+          t_min+o;v n = !(P-sh.ce);v l=v{0.0,0.0,0.0};if (sh.a9 != -1) {if ((rd*-1.0)%n > 
+          0){l=l+alights[sh.a9].ra;}}if(sh.mat==0){v dir = rcd();v w0 = bt(dir,n);d pdf=(n
+          %w0)/c_PI;v refl=sh.co;l=l+refl* (max((n% w0), 0.0) / c_PI / pdf)*rc(P+w0*.0001,
+          w0,depth-1);}return l;}return v{.5,.5,.5};}q toRGB(d a){return q(255.999*pow(a,1
+          /2.2));}q main() {q wi=640;q he=480;v ho = v{1.10457,0,0};v ve=v{0,0.828427,0};
+          v ulc=v{-0.552285,0.414214,-1};v o={0.0,0.0,0.0};std::cout<<"P3\n"<<wi<<' '<<he
+          <<"\n255\n";for(q y=0;y<he;y++){for (q x=0;x<wi;x++){v cT=v{0.0,0.0,0.0};for(q z
+          = 0;z<512;z++){d s=((x+rV())/d(wi-1.0));d t=((y+rV())/d(he-1.0));v rd=!(ulc+ho*s
+          -ve*t-o);cT=cT+rc(o, rd, 10);}cT=cT*(1.0/512);std::cout<<toRGB(cT.x)<<' '<<
+          toRGB(cT.y)<<' '<<toRGB(cT.z)<<'\n';}}}
+          
+          </code></pre>
+      </div>
+      </div>
+      </div>
   </section>
 
   <!-- Footer -->
