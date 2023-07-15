@@ -177,52 +177,7 @@
     <div class="row">
       <div class="col-md-6 d-flex justify-content-center">
       <div class="text-left">
-        <pre><code>
-          #include &lt;iostream&gt;
-          #include &lt;cmath&gt;
-          typedef double d;typedef int q;const d c_PI=3.1415926;d rV(){return (d)rand()/
-          RAND_MAX;}struct v{d x,y,z;v operator+(v o){return v{x+o.x,y+o.y,z+o.z};}v 
-          operator*(v o){return v{x*o.x,y*o.y,z*o.z};}v operator*(d s){return v{x*s,y*s,z*
-          s};}v operator-(v o){return v{x-o.x,y-o.y,z-o.z};}d operator%(v o){return x*o.x+
-          y*o.y+z*o.z;}v operator^(v o){return v{y*o.z-z*o.y,z*o.x-x*o.z,x*o.y-y*o.x};}
-          d n(){return sqrt(y*y+x*x+z*z);}v operator!(){d l=n();return 
-          v{x/l,y/l,z/l};}};v bt(v& dr, v& w) {v a=fabs(w.x>.9)?v{0.0,1.0,0.0}:v{1.0,0.0,
-          0.0};v v1=!(w^a);v u=w^v1;return !(u*dr.x+v1*dr.y+w*dr.z);}std::ostream& 
-          operator<<(std::ostream& os,const v& v) {os<<v.x<<" "<<v.y<<" "<< v.z;return os;
-          }v rcd() {d r1 = rV();d r2 = rV();d phi = 2*c_PI*r1;return v{cos(phi)*sqrt(r2),
-          sin(phi) * sqrt(r2),sqrt(1-r2)};}struct s{v ce;d r;v co;q mat;q a9;
-          d isect(v& o, v& rd){v oc=o-ce;d a=(rd%rd);d b=2.0*(oc%rd);d c=(oc%oc)-r*r;d e =
-          b*b-4.0*a*c;if(e >= 0.0){d dr = sqrt(e);return 
-            ((-b-dr)/(2.0*a)<0)?(-b+dr)/(2.0
-          *a):(-b-dr)/(2.0*a);}return -1.0;}};struct light{v ra;};light alights[]={v{10.0,
-          10.0,10.0}};s objs[]= {s{v{-.5,-.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-.5,.5
-          ,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-.5,1.5,-12.0},0.5,v{0.75,0.25,0.25},0,
-          -1},s{v{-.5,2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-1.5,2.5,-12.0},0.5,v{
-          0.75,0.25,0.25},0,-1},s{v{-2.5,-.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-2.5,
-          .5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-2.5,1.5,-12.0},0.5,v{0.75,0.25,0.25}
-          ,0,-1},s{v{-2.5,2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{-1.5,.5,-12.0},0.5,
-          v{0.75, 0.25, 0.25},0,-1},s{v{3.5, 2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{
-          1.5,2.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{2.5,1.5,-12.0},0.5,v{0.75,0.25,
-          0.25},0,-1},s{v{2.5,.5,-12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{2.5,-.5,-12.0},0.5
-          ,v{0.75, 0.25, 0.25}, 0, -1},s{v{1.5,0.0, -12.0},0.5,v{0.75, 0.25, 0.25},0,-1}
-          ,s{v{ 2.5, 2.5, -12.0},0.5,v{0.75,0.25,0.25},0,-1},s{v{ 0.0,-101.5,-6.0},100.0
-          ,v{0.25, 0.25, 0.75},0,-1},s{v{5.0,8.0,-12.0},1.0,v{0.0,0.0,0.0},3,0}};d fI(v o,
-          v rd,q& sh) {d t_min=20000000000.0;for(q i=0;i<20;i++){d t3=objs[i].isect(o
-          ,rd);if(t3<t_min&&t3>0){t_min = t3;sh = i;}}return (sh == -1)?-1.0:t_min;}d max(
-          d a, d b){return (a > b)?a:b;}v rc(v o, v& rd, q depth){if (depth <= 0) return
-          v{0.0,0.0,0.0};q s1 = -1;d t_min=fI(o,rd,s1);if(s1!=-1){s sh=objs[s1];v P=rd*
-          t_min+o;v n = !(P-sh.ce);v l=v{0.0,0.0,0.0};if (sh.a9 != -1) {if ((rd*-1.0)%n > 
-          0){l=l+alights[sh.a9].ra;}}if(sh.mat==0){v dir = rcd();v w0 = bt(dir,n);d pdf=(n
-          %w0)/c_PI;v refl=sh.co;l=l+refl* (max((n% w0), 0.0) / c_PI / pdf)*rc(P+w0*.0001,
-          w0,depth-1);}return l;}return v{.5,.5,.5};}q toRGB(d a){return q(255.999*pow(a,1
-          /2.2));}q main() {q wi=640;q he=480;v ho = v{1.10457,0,0};v ve=v{0,0.828427,0};
-          v ulc=v{-0.552285,0.414214,-1};v o={0.0,0.0,0.0};std::cout<<"P3\n"<<wi<<' '<<he
-          <<"\n255\n";for(q y=0;y<he;y++){for (q x=0;x<wi;x++){v cT=v{0.0,0.0,0.0};for(q z
-          = 0;z<512;z++){d s=((x+rV())/d(wi-1.0));d t=((y+rV())/d(he-1.0));v rd=!(ulc+ho*s
-          -ve*t-o);cT=cT+rc(o, rd, 10);}cT=cT*(1.0/512);std::cout<<toRGB(cT.x)<<' '<<
-          toRGB(cT.y)<<' '<<toRGB(cT.z)<<'\n';}}}
-          
-          </code></pre>
+        <iframe src="assets/tr.txt" class="embed-responsive embed-responsive-16by9" style="width: 80ch; height: 45rem;"></iframe>
       </div>
       </div>
       </div>
